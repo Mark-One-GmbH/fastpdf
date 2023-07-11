@@ -8,18 +8,18 @@ from ._anvil_designer import previewTemplate
 from anvil import *
 import anvil.js
 
+
 class preview(previewTemplate):
-  def __init__(self, **properties):
-    self.init_components(**properties)
+    def __init__(self, **properties):
+        self.init_components(**properties)
 
-  
-  def form_show(self, **event_args):
-    self.update_ui()
+    def form_show(self, **event_args):
+        self.update_ui()
 
-  def update_ui(self):
-    if self.pdf_media:
-      from ...fast_pdf import utils
-      self.call_js('display_blob', utils.media_obj_to_base64(self.pdf_media))
-    elif self.url:
-      self.call_js('display_url',self.url)
+    def update_ui(self):
+        if self.pdf_media:
+            from ...fast_pdf import utils
 
+            self.call_js("display_blob", utils.media_obj_to_base64(self.pdf_media))
+        elif self.url:
+            self.call_js("display_url", self.url)
