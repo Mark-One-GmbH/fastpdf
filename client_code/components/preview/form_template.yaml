@@ -1,0 +1,24 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "<iframe id='fast_pdf_view' src='' height=1000 width=800 frameborder=\"\
+      0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"\
+      true\"></iframe>\n\n<script>\nfunction getRandomInt(max) {\n  return Math.floor(Math.random()\
+      \ * max);\n}\n\t\nvar unique_id = \"fast_pdf_view\" + getRandomInt(9999999).toString();\n\
+      var div_id = 'fast_pdf_view';\n      \nif (document.getElementById(div_id))\
+      \ {\n    document.getElementById(div_id).setAttribute(\"id\",unique_id);\n}\n\
+      \n  \nfunction base64ToBlob( base64, type = \"application/octet-stream\" ) {\n\
+      \  const binStr = atob( base64 );\n  const len = binStr.length;\n  const arr\
+      \ = new Uint8Array(len);\n  for (let i = 0; i < len; i++) {\n    arr[ i ] =\
+      \ binStr.charCodeAt( i );\n  }\n  return new Blob( [ arr ], { type: type } );\n\
+      }\n  \nfunction display_blob(base64){\n  const blob = base64ToBlob( base64,\
+      \ 'application/pdf' );\n  const url = URL.createObjectURL(blob);  \n  $('#'+unique_id).attr('src',\
+      \ url)\n}\n\nfunction display_url(url){\n  $('#'+unique_id).attr('src', url)\n\
+      }\n</script>"}
+  event_bindings: {show: form_show}
+components: []
+is_package: true
+custom_component: true
+properties:
+- {name: url, type: string, default_value: '', description: A url to your pdf file that should be displayed}
+- {name: pdf_media, type: object, description: Anvil Media object pdf that should be displayed}
