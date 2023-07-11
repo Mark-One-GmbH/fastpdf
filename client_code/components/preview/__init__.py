@@ -5,8 +5,6 @@ https://stackoverflow.com/questions/40674532/how-to-display-base64-encoded-pdf
 """
 
 from ._anvil_designer import previewTemplate
-from anvil import *
-import anvil.js
 
 
 class preview(previewTemplate):

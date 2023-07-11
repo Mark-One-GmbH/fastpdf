@@ -196,19 +196,19 @@ class Document:
         return self.doc.page_no()
 
     def set_text_color(self, color_1, color_2=None, color_3=None):
-        if color_2 != None and color_3 != None:
+        if color_2 is not None and color_3 is not None:
             self.doc.set_text_color(color_1, color_2, color_3)
         else:
             self.doc.set_text_color(color_1)
 
     def set_draw_color(self, color_1, color_2=None, color_3=None):
-        if color_2 != None and color_3 != None:
+        if color_2 is not None and color_3 is not None:
             self.doc.set_draw_color(color_1, color_2, color_3)
         else:
             self.doc.set_draw_color(color_1)
 
     def set_fill_color(self, color_1, color_2=None, color_3=None):
-        if color_2 != None and color_3 != None:
+        if color_2 is not None and color_3 is not None:
             self.doc.set_fill_color(color_1, color_2, color_3)
         else:
             self.doc.set_fill_color(color_1)

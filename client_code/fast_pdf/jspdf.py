@@ -1,4 +1,3 @@
-import anvil.js
 
 
 class jsPdf:
@@ -258,7 +257,7 @@ class jsPdf:
         self.doc.line(x_start, y_start, x_end, y_end)
 
     def set_text_color(self, color_1, color_2=None, color_3=None):
-        if color_2 != None and color_3 != None:
+        if color_2 is not None and color_3 is not None:
             self.doc.setTextColor(color_1, color_2, color_3)
         else:
             self.doc.setTextColor(color_1)
@@ -266,13 +265,13 @@ class jsPdf:
         self.current_text_color = (color_1, color_2, color_3)
 
     def set_draw_color(self, color_1, color_2=None, color_3=None):
-        if color_2 != None and color_3 != None:
+        if color_2 is not None and color_3 is not None:
             self.doc.setDrawColor(color_1, color_2, color_3)
         else:
             self.doc.setDrawColor(color_1)
 
     def set_fill_color(self, color_1, color_2=None, color_3=None):
-        if color_2 != None and color_3 != None:
+        if color_2 is not None and color_3 is not None:
             self.doc.setFillColor(color_1, color_2, color_3)
         else:
             self.doc.setFillColor(color_1)
